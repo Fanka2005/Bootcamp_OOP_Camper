@@ -17,7 +17,7 @@ public class SmartBulb {
 
 
     //Getters and Setters
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 
