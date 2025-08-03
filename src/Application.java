@@ -2,7 +2,7 @@ public class Application {
     public static void main(String[] args) {
 
         //first integer
-        int number1 = -7;
+        int number1 = 7;
 
         //second integer
         int number2 = 4;

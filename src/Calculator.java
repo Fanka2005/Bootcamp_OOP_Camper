@@ -13,6 +13,13 @@ public class Calculator {
      * @return returns true if i is positive; false otherwise
      */
 
+    /**
+     * @param i first number
+     * @param j second number
+     * @return the product of i+j
+     */
+    int multipyTwoNumbers(int i, int j) {return (i * j);}
+
     boolean isPositive(int i) {
         return (i >= 0);
     }
