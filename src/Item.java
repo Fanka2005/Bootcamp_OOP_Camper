@@ -9,8 +9,20 @@ public class Item {
         this.weight = weight;
     }
 
-    // Method
+    // Getter Method
     public String toString(){
         return this.name + " has weight of " + this.weight;
     }
+
+    // Setter Method
+    public void setName(String name){
+        this.name = name;
+    }
+
+    //
+    public void setWeight(float weight){
+        this.weight = weight;
+    }
+
+
 }
