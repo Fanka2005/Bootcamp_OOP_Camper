@@ -4,9 +4,9 @@ public class Item {
     private float weight;
 
     // Constructor
-    public Item(String name, float weight){
-        this.name = name;
-        this.weight = weight;
+    public Item(String _name, float _weight){
+        this.name = _name;
+        this.weight = _weight;
     }
 
     // Getter Method
@@ -15,13 +15,13 @@ public class Item {
     }
 
     // Setter Method
-    public void setName(String name){
-        this.name = name;
+    public void setName(String _name){
+        this.name = _name;
     }
 
     //
-    public void setWeight(float weight){
-        this.weight = weight;
+    public void setWeight(float _weight){
+        this.weight = _weight;
     }
 
 
