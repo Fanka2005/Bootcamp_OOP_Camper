@@ -23,8 +23,6 @@ public class Item {
     public void setName(String _name){
         this.name = _name;
     }
-
-    //
     public void setWeight(float _weight){
         this.weight = _weight;
     }
