@@ -1,8 +1,8 @@
 public class Bottle extends Item{
-    private float capacity;
+    private double capacity;
 
     // Constructor
-    public Bottle(String _name, float _weight, float _capacity){
+    public Bottle(String _name, double _weight, double _capacity){
         super(_name, _weight);
         this.capacity = _capacity;
     }
@@ -14,12 +14,12 @@ public class Bottle extends Item{
         return super.getName() + " has weight of " + super.getWeight() + " and a capacity of " + this.capacity;
     }
 
-    public float getCapacity(){
+    public double getCapacity(){
         return this.capacity;
     }
 
     // Setter Method
-    public void setCapacity(float _capacity){
+    public void setCapacity(double _capacity){
         this.capacity = _capacity;
     }
 }

@@ -1,10 +1,10 @@
 public class Item {
     // Attribute
     private String name;
-    private float weight;
+    private double weight;
 
     // Constructor
-    public Item(String _name, float _weight){
+    public Item(String _name, double _weight){
         this.name = _name;
         this.weight = _weight;
     }
@@ -16,14 +16,14 @@ public class Item {
     public String getName(){
         return this.name;
     }
-    public float getWeight(){
+    public double getWeight(){
         return this.weight;
     }
     // Setter Method
     public void setName(String _name){
         this.name = _name;
     }
-    public void setWeight(float _weight){
+    public void setWeight(double _weight){
         this.weight = _weight;
     }
 
