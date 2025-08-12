@@ -13,7 +13,12 @@ public class Item {
     public String toString(){
         return this.name + " has weight of " + this.weight;
     }
-
+    public String getName(){
+        return this.name;
+    }
+    public float getWeight(){
+        return this.weight;
+    }
     // Setter Method
     public void setName(String _name){
         this.name = _name;
