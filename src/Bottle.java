@@ -1,6 +1,7 @@
 public class Bottle extends Item{
     private float capacity;
 
+    // Constructor
     public Bottle(String _name, float _weight, float _capacity){
         super(_name, _weight);
         this.capacity = _capacity;
