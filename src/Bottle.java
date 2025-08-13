@@ -11,7 +11,7 @@ public class Bottle extends Item{
     // Getter Method
     @Override
     public String toString(){
-        return super.getName() + " has weight of " + super.getWeight() + " and a capacity of " + this.capacity;
+        return super.getName() + " has weight of " + super.getWeight() + " - to drink with " + this.capacity + " litre left.";
     }
 
     public double getCapacity(){
