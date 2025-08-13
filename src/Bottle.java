@@ -14,12 +14,4 @@ public class Bottle extends Item{
         return super.getName() + " has weight of " + super.getWeight() + " - to drink with " + this.capacity + " litre left.";
     }
 
-    public double getCapacity(){
-        return this.capacity;
-    }
-
-    // Setter Method
-    public void setCapacity(double _capacity){
-        this.capacity = _capacity;
-    }
 }

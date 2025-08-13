@@ -19,13 +19,6 @@ public class Item {
     public double getWeight(){
         return this.weight;
     }
-    // Setter Method
-    public void setName(String _name){
-        this.name = _name;
-    }
-    public void setWeight(double _weight){
-        this.weight = _weight;
-    }
 
 
 }
