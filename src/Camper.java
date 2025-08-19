@@ -1,10 +1,11 @@
 public class Camper {
     private String camperName;
-    private Backpack backpack = new Backpack();
+    private Backpack backpack;
 
     //Constructor
     public Camper(String _camperName){
         this.camperName = _camperName;
+        this.backpack = new Backpack(new Bottle("Bottle", 1.00, 1.0), new FlintAndSteel("Flint and Steel", 0.50), new Bedroll("Bedroll", 7.00));
     }
 
     // Getter Method
