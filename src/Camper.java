@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Camper {
     private String camperName;
     private Backpack backpack;
@@ -10,7 +13,7 @@ public class Camper {
 
     // Getter Method
     public void checkAllItems(){
-        Item[] items = backpack.getItems();
+        List<Item> items = backpack.getItems();
 
         for(Item item : items){
             System.out.println(item.toString());

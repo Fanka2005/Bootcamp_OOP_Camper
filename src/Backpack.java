@@ -1,13 +1,16 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Backpack {
-    private Item[] items = new Item[3];
+    private List<Item> items = new ArrayList<>();
 
     public Backpack(Bottle bottle, FlintAndSteel flintAndSteel, Bedroll bedroll){
-        items[0] = bottle;
-        items[1] = flintAndSteel;
-        items[2] = bedroll;
+        items.add(bottle);
+        items.add(flintAndSteel);
+        items.add(bedroll);
     }
     // Getter Method
-    public Item[] getItems(){
+    public List<Item> getItems(){
         return this.items;
     }
 }
