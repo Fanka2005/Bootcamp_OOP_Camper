@@ -1,4 +1,4 @@
-public class Item {
+public abstract class Item {
     // Attribute
     private String name;
     private double weight;
@@ -10,9 +10,7 @@ public class Item {
     }
 
     // Getter Method
-    public String toString(){
-        return this.name + " has weight of " + this.weight;
-    }
+    public abstract String toString();
     public String getName(){
         return this.name;
     }
