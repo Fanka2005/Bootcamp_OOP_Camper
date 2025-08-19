@@ -7,6 +7,7 @@ public class Campsite {
 
     public void simulate() {
         System.out.println("Welcome to FIT2099 Camping Site");
+        System.out.println(camper.toString());
         System.out.println("Here are the Items that " + camper.getCamperName() + " has in the backpack:");
 
         camper.checkAllItems();
