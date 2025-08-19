@@ -23,6 +23,11 @@ public class Camper {
 
     }
 
+    // Getter Method
+    public List<Item> getItems(){
+        return backpack.getItems();
+    }
+
     public String getCamperName(){
         return this.camperName;
     }

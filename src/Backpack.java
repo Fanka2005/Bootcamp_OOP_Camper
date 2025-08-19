@@ -9,6 +9,7 @@ public class Backpack {
         items.add(_flintAndSteel);
         items.add(_bedroll);
     }
+
     // Getter Method
     public List<Item> getItems(){
         return this.items;

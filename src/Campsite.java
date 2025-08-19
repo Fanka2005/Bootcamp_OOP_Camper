@@ -5,6 +5,11 @@ public class Campsite {
     private Camper camper = new Camper("Fauzanda");
     private List<Item> items = new ArrayList<>();
 
+    // Getter Method
+    public List<Item> getItems(){
+        return items;
+    }
+
     public void simulate() {
         System.out.println("Welcome to FIT2099 Camping Site");
         System.out.println(camper.toString());
