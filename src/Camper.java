@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Camper {
@@ -45,5 +44,9 @@ public class Camper {
 
     public String toString(){
         return this.getCamperName() + " has hydration level of " + this.hydrationLevel + " and coldness level of " + this.coldnessLevel;
+    }
+
+    public String getWeight(){
+        return this.backpack.getWeight();
     }
 }

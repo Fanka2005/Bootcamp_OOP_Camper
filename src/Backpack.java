@@ -52,4 +52,8 @@ public class Backpack {
     public List<Item> getItems(){
         return this.items;
     }
+
+    public String getWeight(){
+        return this.totalWeight + "/" + this.weightLimit;
+    }
 }

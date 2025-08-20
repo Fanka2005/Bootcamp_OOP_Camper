@@ -5,9 +5,13 @@ public class Campsite {
     private Camper camper = new Camper("Fauzanda");
     private List<Item> items = new ArrayList<>();
 
-    public boolean add(Item _item){
+
+    public Campsite(){
+        this.items.add(new Bedroll("Kamui", 7.00));
+    }
+
+    public void add(Item _item){
         this.items.add(_item);
-        return true;
     }
 
     public boolean remove(Item _item){
@@ -21,6 +25,16 @@ public class Campsite {
         return false;
     }
 
+    // Getter Method
+    public void listOutAllItems(){
+
+        for(Item item : this.items){
+            System.out.println(item.toString());
+        }
+
+    }
+
+
     public List<Action> allowableActions(){
         List<Action> actions = new ArrayList<>();
         for(Item item: this.items){
@@ -30,12 +44,23 @@ public class Campsite {
     }
 
     public void simulate() {
+        List<Action> actions = new ArrayList<>();
+        actions.addAll(this.allowableActions());
+        actions.addAll(camper.allowableActions());
+
+        System.out.println("#################################################");
         System.out.println("Welcome to FIT2099 Camping Site");
         System.out.println(camper.toString());
-        System.out.println("Here are the Items that " + camper.getCamperName() + " has in the backpack:");
+        System.out.println("Here are the Items that " + camper.getCamperName() + " has in the Backpack (" + camper.getWeight() +") :");
 
         camper.checkAllItems();
 
-        System.out.println("Glad that you enjoy your time here!");
+        System.out.println("Here are the items that we have on campsite:");
+        this.listOutAllItems();
+        System.out.println("#################################################");
+
+        Action action = Menu.showMenu(actions, camper);
+        System.out.println(action.execute(camper, this));
+
     }
 }
