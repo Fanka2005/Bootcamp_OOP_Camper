@@ -5,9 +5,20 @@ public class Campsite {
     private Camper camper = new Camper("Fauzanda");
     private List<Item> items = new ArrayList<>();
 
-    // Getter Method
-    public List<Item> getItems(){
-        return items;
+    public boolean add(Item _item){
+        this.items.add(_item);
+        return true;
+    }
+
+    public boolean remove(Item _item){
+        for(int i=0; i < this.items.size(); i++){
+            if(this.items.get(i)==_item) {
+                this.items.remove(i);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void simulate() {

@@ -3,11 +3,40 @@ import java.util.ArrayList;
 
 public class Backpack {
     private List<Item> items = new ArrayList<>();
+    private double weightLimit;
+    private double totalWeight;
 
-    public Backpack(Bottle _bottle, FlintAndSteel _flintAndSteel, Bedroll _bedroll){
-        items.add(_bottle);
-        items.add(_flintAndSteel);
-        items.add(_bedroll);
+    public Backpack(Bottle _bottle, FlintAndSteel _flintAndSteel, Bedroll _bedroll, double _weightLimit){
+        this.items.add(_bottle);
+        this.items.add(_flintAndSteel);
+        this.items.add(_bedroll);
+        this.totalWeight = _bedroll.getWeight() + _bottle.getWeight() + _flintAndSteel.getWeight();
+        this.weightLimit = _weightLimit;
+    }
+
+    public boolean add(Item _item){
+        double estimatedWeight = _item.getWeight() + this.totalWeight;
+
+        if(estimatedWeight > this.weightLimit){
+            return false;
+        }
+
+        this.items.add(_item);
+        this.totalWeight += _item.getWeight();
+
+        return true;
+    }
+
+    public boolean remove(Item _item){
+        for(int i=0; i < this.items.size(); i++){
+            if(this.items.get(i)==_item) {
+                this.items.remove(i);
+                this.totalWeight -= _item.getWeight();
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // Getter Method
