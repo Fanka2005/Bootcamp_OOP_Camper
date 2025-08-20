@@ -21,8 +21,8 @@ public abstract class Item {
     // Abstract Method
     public abstract String getSimpleName();
 
-    public Action getPackAction(){return new PackAction(this)};
+    public Action getPackAction(){return new PackAction(this);}
 
-    public Action getUnpackAction(){return new UnpackAction(this)};
+    public Action getUnpackAction(){return new UnpackAction(this);}
 
 }
