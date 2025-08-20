@@ -5,7 +5,13 @@ public class Bedroll extends Item{
     }
 
     @Override
-    public String toString(){
-        return super.getName() + " has weight of " + super.getWeight() + " - rest.";
+    public String getSimpleName(){
+        return "Bedroll";
     }
+
+    @Override
+    public String toString(){
+        return super.getName() + " (" + this.getSimpleName() + ") " + " has weight of " + super.getWeight() + " - rest.";
+    }
+
 }

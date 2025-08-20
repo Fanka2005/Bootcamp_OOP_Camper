@@ -18,5 +18,7 @@ public abstract class Item {
         return this.weight;
     }
 
+    // Abstract Method
+    public abstract String getSimpleName();
 
 }

@@ -7,6 +7,11 @@ public class FlintAndSteel extends Item{
 
     @Override
     public String toString(){
-        return super.getName() + " has weight of " + super.getWeight() + " - to start a fire.";
+        return super.getName() + " (" + this.getSimpleName() + ") "  + " has weight of " + super.getWeight() + " - to start a fire.";
+    }
+
+    @Override
+    public String getSimpleName(){
+        return "Flint and Steel";
     }
 }
