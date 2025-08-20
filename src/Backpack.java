@@ -39,6 +39,15 @@ public class Backpack {
         return false;
     }
 
+    public List<Action> allowableActions(){
+        List<Action> actions = new ArrayList<>();
+        for(Item item: this.items){
+            actions.add(item.getUnpackAction());
+        }
+        return actions;
+    }
+
+
     // Getter Method
     public List<Item> getItems(){
         return this.items;

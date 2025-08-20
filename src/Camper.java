@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Camper {
@@ -15,13 +16,19 @@ public class Camper {
 
     // Getter Method
     public void checkAllItems(){
-        List<Item> items = backpack.getItems();
+        List<Item> items = this.backpack.getItems();
 
         for(Item item : items){
             System.out.println(item.toString());
         }
 
     }
+
+    public List<Action> allowableActions(){
+
+        return this.backpack.allowableActions();
+    }
+
 
     // Getter Method
     public boolean add(Item _item){

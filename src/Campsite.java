@@ -21,6 +21,14 @@ public class Campsite {
         return false;
     }
 
+    public List<Action> allowableActions(){
+        List<Action> actions = new ArrayList<>();
+        for(Item item: this.items){
+            actions.add(item.getPackAction());
+        }
+        return actions;
+    }
+
     public void simulate() {
         System.out.println("Welcome to FIT2099 Camping Site");
         System.out.println(camper.toString());
