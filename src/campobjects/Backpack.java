@@ -8,59 +8,116 @@ import items.Item;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * <h1>Backpack class</h1>
+ * This Backpack class is used to represent a Backpack.
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class Backpack {
-    private List<Item> items = new ArrayList<>();
-    private double weightLimit;
-    private double totalWeight;
 
-    public Backpack(Bottle _bottle, FlintAndSteel _flintAndSteel, Bedroll _bedroll, double _weightLimit){
-        this.items.add(_bottle);
-        this.items.add(_flintAndSteel);
-        this.items.add(_bedroll);
-        this.totalWeight = _bedroll.getWeight() + _bottle.getWeight() + _flintAndSteel.getWeight();
-        this.weightLimit = _weightLimit;
+  /**
+   * Store the list of item objects that is in the backpack
+   */
+  private List<Item> items = new ArrayList<>();
+
+  /**
+   * Store the weight limit of the backpack
+   */
+  private double weightLimit;
+
+  /**
+   * dynamically stores the current total weight of the backpack
+   */
+  private double totalWeight;
+
+  /**
+   * Backpack Constructor
+   * <p>
+   * Initiate all the backpack class attribute
+   *
+   * @param bottle        is a bottle
+   * @param flintAndSteel is a flintAndSteel
+   * @param bedroll       is a bedroll
+   * @param weightLimit   is the backpack weight limit
+   */
+  public Backpack(Bottle bottle, FlintAndSteel flintAndSteel, Bedroll bedroll, double weightLimit) {
+    this.items.add(bottle);
+    this.items.add(flintAndSteel);
+    this.items.add(bedroll);
+    this.totalWeight = bedroll.getWeight() + bottle.getWeight() + flintAndSteel.getWeight();
+    this.weightLimit = weightLimit;
+  }
+
+  /**
+   * Add method to add items to the backpack, but will check whether item added will make the back
+   * pack overweight or not.
+   *
+   * @param item is the item object
+   * @return boolean : true = the item can be added, false = the item cannot be added (exceed the
+   * weight limit)
+   */
+  public boolean add(Item item) {
+    double estimatedWeight = item.getWeight() + this.totalWeight;
+
+    if (estimatedWeight > this.weightLimit) {
+      return false;
     }
 
-    public boolean add(Item _item){
-        double estimatedWeight = _item.getWeight() + this.totalWeight;
+    this.items.add(item);
+    this.totalWeight += item.getWeight();
 
-        if(estimatedWeight > this.weightLimit){
-            return false;
-        }
+    return true;
+  }
 
-        this.items.add(_item);
-        this.totalWeight += _item.getWeight();
-
+  /**
+   * Remove method to remove items from the backpack
+   *
+   * @param item is the item object
+   * @return boolean : true = the item can be removed, false = the item cannot be removed
+   */
+  public boolean remove(Item item) {
+    for (int i = 0; i < this.items.size(); i++) {
+      if (this.items.get(i) == item) {
+        this.items.remove(i);
+        this.totalWeight -= item.getWeight();
         return true;
+      }
     }
 
-    public boolean remove(Item _item){
-        for(int i=0; i < this.items.size(); i++){
-            if(this.items.get(i)==_item) {
-                this.items.remove(i);
-                this.totalWeight -= _item.getWeight();
-                return true;
-            }
-        }
+    return false;
+  }
 
-        return false;
+
+  /**
+   * allowableActions method list all of the allowable action that the backpack can do.
+   *
+   * @return actions,  list all of the allowable action that the backpack can do.
+   */
+  public List<Action> allowableActions() {
+    List<Action> actions = new ArrayList<>();
+    for (Item item : this.items) {
+      actions.add(item.getUnpackAction());
     }
-
-    public List<Action> allowableActions(){
-        List<Action> actions = new ArrayList<>();
-        for(Item item: this.items){
-            actions.add(item.getUnpackAction());
-        }
-        return actions;
-    }
+    return actions;
+  }
 
 
-    // Getter Method
-    public List<Item> getItems(){
-        return this.items;
-    }
+  /**
+   * Getter Method, to get the list of item object in the back pack
+   *
+   * @return list of items in the back pack
+   */
+  public List<Item> getItems() {
+    return this.items;
+  }
 
-    public String getWeight(){
-        return this.totalWeight + "/" + this.weightLimit;
-    }
+  /**
+   * Getter Method, to get the current weight of the backpack
+   *
+   * @return the string of the current weight out of the total weight limit
+   */
+  public String getWeight() {
+    return this.totalWeight + "/" + this.weightLimit;
+  }
 }
