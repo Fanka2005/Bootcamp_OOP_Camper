@@ -4,26 +4,49 @@ import campobjects.Camper;
 import campobjects.Campsite;
 import items.Item;
 
-public class PackAction extends Action{
+/**
+ * <h1>PackAction class</h1>
+ * This class is used extend the abstract Action class for Packing the item in campsite to the
+ * backpack.
+ */
+public class PackAction extends Action {
 
-    public PackAction(Item _item){
-        super(_item);
+  /**
+   * PackAction Constructor
+   * @param item is the Item object
+   */
+  public PackAction(Item item) {
+    super(item);
+  }
+
+  /**
+   * Override the abstract method execute in the Action class
+   *
+   * @param camper   is the Camper object
+   * @param campsite is the Campsite object
+   * @return a string
+   */
+  @Override
+  public String execute(Camper camper, Campsite campsite) {
+
+    if (camper.add(super.getItem())) {
+      if (campsite.remove(super.getItem())) {
+        return camper + " packed " + super.getItem().getSimpleName() + " to the backpack";
+      }
+      return super.getItem().getSimpleName() + " is not in campobjects.Campsite";
     }
+    return super.getItem().getSimpleName()
+        + " Cannot be packed as it will exceeds the backpack limit";
+  }
 
-    @Override
-    public String execute(Camper _camper, Campsite _campsite) {
-
-        if(_camper.add(super.getItem())) {
-            if(_campsite.remove(super.getItem())){
-                return  _camper + " packed " + super.getItem().getSimpleName() + " to the backpack";
-            }
-            return super.getItem().getSimpleName() + " is not in campobjects.Campsite";
-        }
-        return super.getItem().getSimpleName() + " Cannot be packed as it will exceeds the backpack limit";
-    }
-
-    @Override
-    public String menuDescription(Camper _camper) {
-        return _camper + " will pack " + super.getItem().getSimpleName() + " to the backpack";
-    }
+  /**
+   * Override the abstract method menuDescription in the Action class
+   *
+   * @param camper is the Camper object
+   * @return a string
+   */
+  @Override
+  public String menuDescription(Camper camper) {
+    return camper + " will pack " + super.getItem().getSimpleName() + " to the backpack";
+  }
 }

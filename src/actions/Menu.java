@@ -2,25 +2,32 @@ package actions;
 
 import campobjects.Camper;
 import java.util.*;
+
+/**
+ * <h1>I/O Interaction Console</h1>
+ * This class is used as interaction console
+ */
+
 public class Menu {
-    public static Action showMenu(List<Action> actions, Camper camper){
-        Scanner scanner = new Scanner(System.in);
-        Character startChar = 'a';
 
-        Map<Character, Action> keyToActionMap = new HashMap<>();
+  public static Action showMenu(List<Action> actions, Camper camper) {
+    Scanner scanner = new Scanner(System.in);
+    Character startChar = 'a';
 
-        for (Action action:actions){
-            keyToActionMap.put(startChar, action);
-            System.out.println(startChar + ": " + action.menuDescription(camper));
-            startChar++;
+    Map<Character, Action> keyToActionMap = new HashMap<>();
 
-        }
+    for (Action action : actions) {
+      keyToActionMap.put(startChar, action);
+      System.out.println(startChar + ": " + action.menuDescription(camper));
+      startChar++;
 
-        char key;
-        do{
-            key = scanner.next().charAt(0);
-        } while (!keyToActionMap.containsKey(key));
-
-        return keyToActionMap.get(key);
     }
+
+    char key;
+    do {
+      key = scanner.next().charAt(0);
+    } while (!keyToActionMap.containsKey(key));
+
+    return keyToActionMap.get(key);
+  }
 }
