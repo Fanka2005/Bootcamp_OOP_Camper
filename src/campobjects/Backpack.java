@@ -1,3 +1,10 @@
+package campobjects;
+
+import actions.Action;
+import items.Bedroll;
+import items.Bottle;
+import items.FlintAndSteel;
+import items.Item;
 import java.util.List;
 import java.util.ArrayList;
 

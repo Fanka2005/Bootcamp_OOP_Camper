@@ -1,3 +1,5 @@
+package items;
+
 public class Bottle extends Item{
     private double capacity;
 
@@ -16,6 +18,6 @@ public class Bottle extends Item{
 
     @Override
     public String getSimpleName(){
-        return "Bottle";
+        return "items.Bottle";
     }
 }

@@ -1,3 +1,9 @@
+package campobjects;
+
+import actions.Action;
+import actions.Menu;
+import items.Bedroll;
+import items.Item;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -51,7 +57,7 @@ public class Campsite {
         System.out.println("#################################################");
         System.out.println("Welcome to FIT2099 Camping Site");
         System.out.println(camper.toString());
-        System.out.println("Here are the Items that " + camper.getCamperName() + " has in the Backpack (" + camper.getWeight() +") :");
+        System.out.println("Here are the Items that " + camper.getCamperName() + " has in the campobjects.Backpack (" + camper.getWeight() +") :");
 
         camper.checkAllItems();
 

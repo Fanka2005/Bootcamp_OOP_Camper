@@ -1,3 +1,10 @@
+package campobjects;
+
+import actions.Action;
+import items.Bedroll;
+import items.Bottle;
+import items.FlintAndSteel;
+import items.Item;
 import java.util.List;
 
 public class Camper {
@@ -8,7 +15,7 @@ public class Camper {
     //Constructor
     public Camper(String _camperName){
         this.camperName = _camperName;
-        this.backpack = new Backpack(new Bottle("Bottle", 1.00, 1.0), new FlintAndSteel("Flint and Steel", 0.50), new Bedroll("Bedroll", 7.00), 10.0);
+        this.backpack = new Backpack(new Bottle("items.Bottle", 1.00, 1.0), new FlintAndSteel("Flint and Steel", 0.50), new Bedroll("items.Bedroll", 7.00), 10.0);
         this.hydrationLevel = 20;
         this.coldnessLevel = 20;
     }

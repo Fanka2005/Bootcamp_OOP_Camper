@@ -1,3 +1,9 @@
+package items;
+
+import actions.Action;
+import actions.PackAction;
+import actions.UnpackAction;
+
 public abstract class Item {
     // Attribute
     private String name;

@@ -1,3 +1,5 @@
+package items;
+
 public class Bedroll extends Item{
     // Constructor
     public Bedroll(String _name, double _weight){
@@ -6,7 +8,7 @@ public class Bedroll extends Item{
 
     @Override
     public String getSimpleName(){
-        return "Bedroll";
+        return "items.Bedroll";
     }
 
     @Override

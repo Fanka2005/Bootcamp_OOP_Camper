@@ -1,3 +1,9 @@
+package actions;
+
+import campobjects.Camper;
+import campobjects.Campsite;
+import items.Item;
+
 public class UnpackAction extends Action{
     public UnpackAction(Item _item){
         super(_item);

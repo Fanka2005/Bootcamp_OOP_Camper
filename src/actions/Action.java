@@ -1,3 +1,9 @@
+package actions;
+
+import campobjects.Camper;
+import campobjects.Campsite;
+import items.Item;
+
 public abstract class Action {
     private Item item;
 

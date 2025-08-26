@@ -1,3 +1,9 @@
+package actions;
+
+import campobjects.Camper;
+import campobjects.Campsite;
+import items.Item;
+
 public class PackAction extends Action{
 
     public PackAction(Item _item){
@@ -11,7 +17,7 @@ public class PackAction extends Action{
             if(_campsite.remove(super.getItem())){
                 return  _camper + " packed " + super.getItem().getSimpleName() + " to the backpack";
             }
-            return super.getItem().getSimpleName() + " is not in Campsite";
+            return super.getItem().getSimpleName() + " is not in campobjects.Campsite";
         }
         return super.getItem().getSimpleName() + " Cannot be packed as it will exceeds the backpack limit";
     }

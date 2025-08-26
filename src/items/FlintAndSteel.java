@@ -1,3 +1,5 @@
+package items;
+
 public class FlintAndSteel extends Item{
 
     // Constructor
