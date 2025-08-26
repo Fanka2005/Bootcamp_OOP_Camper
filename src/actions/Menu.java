@@ -1,3 +1,6 @@
+package actions;
+
+import campobjects.Camper;
 import java.util.*;
 public class Menu {
     public static Action showMenu(List<Action> actions, Camper camper){
