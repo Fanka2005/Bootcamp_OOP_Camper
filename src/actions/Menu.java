@@ -6,6 +6,8 @@ import java.util.*;
 /**
  * <h1>I/O Interaction Console</h1>
  * This class is used as interaction console
+ *
+ * @author Fauzanda Lathifanka Sunarko
  */
 
 public class Menu {

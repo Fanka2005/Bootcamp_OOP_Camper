@@ -8,6 +8,8 @@ import items.Item;
  * <h1>UnpackAction class</h1>
  * This class is used extend the abstract Action class for Unpacking the item in backpack to the
  * campsite.
+ *
+ * @author Fauzanda Lathifanka Sunarko
  */
 public class UnpackAction extends Action {
 

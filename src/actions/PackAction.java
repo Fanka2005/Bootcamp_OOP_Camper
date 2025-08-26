@@ -8,6 +8,8 @@ import items.Item;
  * <h1>PackAction class</h1>
  * This class is used extend the abstract Action class for Packing the item in campsite to the
  * backpack.
+ *
+ * @author Fauzanda Lathifanka Sunarko
  */
 public class PackAction extends Action {
 

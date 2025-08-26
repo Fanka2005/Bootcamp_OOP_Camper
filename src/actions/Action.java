@@ -7,6 +7,8 @@ import items.Item;
 /**
  * <h1>Action class</h1>
  * The abstract class Action is used as the blue-print for its child classes.
+ *
+ * @author Fauzanda Lathifanka Sunarko
  */
 public abstract class Action {
 
