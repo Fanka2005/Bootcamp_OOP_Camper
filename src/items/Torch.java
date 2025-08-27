@@ -4,7 +4,6 @@ import static items.Ability.IGNITE_FIRE;
 
 import actions.Action;
 import actions.IgniteAction;
-import campobjects.ActionCapable;
 import campobjects.Camper;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +14,7 @@ import java.util.List;
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class Torch extends Item implements Flammable, ActionCapable {
-
-  /**
-   * Store the list of Action that Torch can do
-   */
-  private List<Action> actions = new ArrayList<>();
+public class Torch extends Item implements Flammable {
 
   /**
    * Torch Constructor
@@ -41,7 +35,7 @@ public class Torch extends Item implements Flammable, ActionCapable {
    */
   @Override
   public String getSimpleName() {
-    return "Bedroll";
+    return "Torch";
   }
 
   /**
@@ -77,9 +71,9 @@ public class Torch extends Item implements Flammable, ActionCapable {
    */
   @Override
   public List<Action> allowableActions(Camper camper) {
-
+    List<Action> actions = new ArrayList<>();
     if (camper.hasCapability(IGNITE_FIRE)) {
-      this.actions.add(new IgniteAction(this));
+      actions.add(new IgniteAction(this));
     }
     return actions;
   }

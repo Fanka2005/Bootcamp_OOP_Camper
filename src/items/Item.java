@@ -3,7 +3,10 @@ package items;
 import actions.Action;
 import actions.PackAction;
 import actions.UnpackAction;
+import campobjects.ActionCapable;
+import campobjects.Camper;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -12,7 +15,7 @@ import java.util.Set;
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public abstract class Item {
+public abstract class Item implements ActionCapable {
 
   /**
    * Store the item's name
@@ -112,6 +115,12 @@ public abstract class Item {
    */
   public Action getUnpackAction() {
     return new UnpackAction(this);
+  }
+
+  @Override
+  public List<Action> allowableActions(Camper camper) {
+    List<Action> actions = null;
+    return actions;
   }
 
 }

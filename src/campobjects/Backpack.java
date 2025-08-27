@@ -5,6 +5,8 @@ import items.Bedroll;
 import items.Bottle;
 import items.FlintAndSteel;
 import items.Item;
+import items.OilLantern;
+import items.Torch;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -45,6 +47,8 @@ public class Backpack implements ActionCapable {
     this.items.add(bottle);
     this.items.add(flintAndSteel);
     this.items.add(bedroll);
+    this.items.add(new OilLantern("Lantern1", 1.50));
+    this.items.add(new Torch("Torch1", 1.00));
     this.totalWeight = bedroll.getWeight() + bottle.getWeight() + flintAndSteel.getWeight();
     this.weightLimit = weightLimit;
   }
@@ -99,7 +103,11 @@ public class Backpack implements ActionCapable {
     List<Action> actions = new ArrayList<>();
     for (Item item : this.items) {
       actions.add(item.getUnpackAction());
+      if (!(item.allowableActions(camper) == null)) {
+        actions.addAll(item.allowableActions(camper));
+      }
     }
+
     return actions;
   }
 

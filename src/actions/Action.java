@@ -2,7 +2,6 @@ package actions;
 
 import campobjects.Camper;
 import campobjects.Campsite;
-import items.Item;
 
 /**
  * <h1>Action class</h1>
@@ -11,14 +10,6 @@ import items.Item;
  * @author Fauzanda Lathifanka Sunarko
  */
 public abstract class Action {
-
-
-  /**
-   * Abstract Getter Method, to get the item object
-   *
-   * @return Item
-   */
-  public abstract Item getItem();
 
   /**
    * Abstract Method for the execution of either pack or unpack action.

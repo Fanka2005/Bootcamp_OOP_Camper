@@ -48,4 +48,6 @@ public class IgniteAction extends Action {
   public String menuDescription(Camper camper) {
     return camper + " will ignite " + flammable.getClass().getSimpleName();
   }
+
+
 }
