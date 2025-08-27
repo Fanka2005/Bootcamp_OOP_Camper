@@ -37,7 +37,7 @@ public class Camper {
 
   /**
    * Camper Constructor
-   *
+   * <p>
    * Initiate all camper class attribute
    *
    * @param camperName is the camper name

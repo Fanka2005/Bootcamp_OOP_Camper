@@ -27,7 +27,7 @@ public class Campsite {
 
   /**
    * Campsite Constructor
-   *
+   * <p>
    * Initiate all Campsite class attribute
    */
   public Campsite() {
