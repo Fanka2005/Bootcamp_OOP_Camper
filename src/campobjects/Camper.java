@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class Camper {
+public class Camper implements ActionCapable {
 
   /**
    * Store the camper name
@@ -96,9 +96,10 @@ public class Camper {
    *
    * @return a list of allowable action that the camper's can do
    */
-  public List<Action> allowableActions() {
+  @Override
+  public List<Action> allowableActions(Camper camper) {
 
-    return this.backpack.allowableActions();
+    return this.backpack.allowableActions(camper);
   }
 
   /**

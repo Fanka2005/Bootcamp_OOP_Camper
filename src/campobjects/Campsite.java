@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class Campsite {
+public class Campsite implements ActionCapable {
 
   /**
    * Store the camper name
@@ -78,7 +78,8 @@ public class Campsite {
    *
    * @return a list of allowable action that the campsite can do
    */
-  public List<Action> allowableActions() {
+  @Override
+  public List<Action> allowableActions(Camper camper) {
     List<Action> actions = new ArrayList<>();
     for (Item item : this.items) {
       actions.add(item.getPackAction());
@@ -91,24 +92,25 @@ public class Campsite {
    */
   public void simulate() {
     List<Action> actions = new ArrayList<>();
-    actions.addAll(this.allowableActions());
-    actions.addAll(camper.allowableActions());
+    actions.addAll(this.allowableActions(this.camper));
+    actions.addAll(this.camper.allowableActions(this.camper));
 
     System.out.println("#################################################");
     System.out.println("Welcome to FIT2099 Camping Site");
-    System.out.println(camper.toString());
+    System.out.println(this.camper.toString());
     System.out.println(
-        "Here are the Items that " + camper.getCamperName() + " has in the campobjects.Backpack ("
-            + camper.getWeight() + ") :");
+        "Here are the Items that " + this.camper.getCamperName()
+            + " has in the campobjects.Backpack ("
+            + this.camper.getWeight() + ") :");
 
-    camper.checkAllItems();
+    this.camper.checkAllItems();
 
     System.out.println("Here are the items that we have on campsite:");
     this.listOutAllItems();
     System.out.println("#################################################");
 
-    Action action = Menu.showMenu(actions, camper);
-    System.out.println(action.execute(camper, this));
+    Action action = Menu.showMenu(actions, this.camper);
+    System.out.println(action.execute(this.camper, this));
 
   }
 }

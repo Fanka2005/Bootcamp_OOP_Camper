@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class Backpack {
+public class Backpack implements ActionCapable {
 
   /**
    * Store the list of item objects that is in the backpack
@@ -94,7 +94,8 @@ public class Backpack {
    *
    * @return actions,  list all of the allowable action that the backpack can do.
    */
-  public List<Action> allowableActions() {
+  @Override
+  public List<Action> allowableActions(Camper camper) {
     List<Action> actions = new ArrayList<>();
     for (Item item : this.items) {
       actions.add(item.getUnpackAction());
