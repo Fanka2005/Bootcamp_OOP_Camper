@@ -16,8 +16,9 @@ public class FlintAndSteel extends Item {
    * @param name   is the Bedroll brand name
    * @param weight is the bedroll weight
    */
-  public FlintAndSteel(String _name, double _weight) {
-    super(_name, _weight);
+  public FlintAndSteel(String name, double weight) {
+    super(name, weight);
+    this.addCapability(Ability.IGNITE_FIRE);
   }
 
   /**
