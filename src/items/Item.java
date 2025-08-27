@@ -48,7 +48,7 @@ public abstract class Item {
 
   protected void addCapability(Enum<Ability> capability){ this.statuses.add(capability);}
   protected void removeCapability(Enum<Ability> capability){ this.statuses.remove(capability);}
-  public boolean hasCapability(Enum<Ability> capability){ this.statuses.contains(capability);}
+  public boolean hasCapability(Enum<Ability> capability){ return this.statuses.contains(capability);}
   /**
    * Getter Method, to get the item's brand name
    *
