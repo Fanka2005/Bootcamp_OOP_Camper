@@ -127,7 +127,7 @@ public class Backpack implements ActionCapable {
    *
    * @return List of items in the backpack
    */
-  public List<Item> getAllItems(){
+  public List<Item> getAllItems() {
     List<Item> itemsCopy;
     itemsCopy = this.items;
     return itemsCopy;

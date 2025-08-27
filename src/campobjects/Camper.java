@@ -126,16 +126,16 @@ public class Camper implements ActionCapable {
   }
 
   /**
-   *  hasCapability Method
-   *  is used to know whether the camper has items with a certain ability, inside the backpack or not
+   * hasCapability Method is used to know whether the camper has items with a certain ability,
+   * inside the backpack or not
    *
    * @param capability is the ability constant in the Enum class
    * @return boolean : true = the item exist, false = the item does not exist
    */
-  public boolean hasCapability(Enum<Ability> capability){
+  public boolean hasCapability(Enum<Ability> capability) {
     for (Item item : backpack.getAllItems()) {
       if (item.hasCapability(capability)) {
-          return true;
+        return true;
       }
     }
     return false;
