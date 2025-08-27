@@ -1,12 +1,14 @@
 package items;
 
+import campobjects.Camper;
+
 /**
  * <h1>Torch class</h1>
  * This Torch class is used to represent a Torch item type
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class Torch extends Item {
+public class Torch extends Item implements Flammable {
 
   /**
    * Torch Constructor
@@ -42,4 +44,17 @@ public class Torch extends Item {
         + super.getWeight() + " - Lighting.";
   }
 
+  /**
+   * to return a string that shows that the Oil Lantern is Ignited by the certain camper this method
+   * is used to know who ignited the oil lantern
+   *
+   * @return a string
+   */
+  @Override
+  public String ignitedBy(Camper camper) {
+    int REDUCE_COLDNESS_VALUE = 1;
+    camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
+    return this + " is ignited by " + camper + " and it reduces the coldness by "
+        + REDUCE_COLDNESS_VALUE;
+  }
 }

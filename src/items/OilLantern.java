@@ -1,12 +1,14 @@
 package items;
 
+import campobjects.Camper;
+
 /**
  * <h1>Oil Lantern class</h1>
  * This Oil Lantern class is used to represent a Oil Lantern item type
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class OilLantern extends Item {
+public class OilLantern extends Item implements Flammable {
 
   /**
    * Oil Lantern Constructor
@@ -40,6 +42,20 @@ public class OilLantern extends Item {
   public String toString() {
     return this.getSimpleName() + " (" + super.getName() + ") " + " has weight of "
         + super.getWeight() + " - lighting.";
+  }
+
+  /**
+   * to return a string that shows that the Oil Lantern is Ignited by the certain camper this method
+   * is used to know who ignited the oil lantern
+   *
+   * @return a string
+   */
+  @Override
+  public String ignitedBy(Camper camper) {
+    int REDUCE_COLDNESS_VALUE = 2;
+    camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
+    return this + " is ignited by " + camper + " and it reduces the coldness by "
+        + REDUCE_COLDNESS_VALUE;
   }
 
 }

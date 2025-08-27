@@ -140,4 +140,13 @@ public class Camper implements ActionCapable {
     }
     return false;
   }
+
+  /**
+   * Decrease the coldness level of the camper by a certain value
+   *
+   * @param value is an integer value
+   */
+  public void decreaseColdnessLevel(int value) {
+    this.coldnessLevel -= value;
+  }
 }
