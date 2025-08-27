@@ -121,4 +121,15 @@ public class Backpack implements ActionCapable {
   public String getWeight() {
     return this.totalWeight + "/" + this.weightLimit;
   }
+
+  /**
+   * Getter Method, to get the current list of items in the backpack, by using defensive copy.
+   *
+   * @return List of items in the backpack
+   */
+  public List<Item> getAllItems(){
+    List<Item> itemsCopy;
+    itemsCopy = this.items;
+    return itemsCopy;
+  }
 }
