@@ -1,6 +1,13 @@
 package items;
 
+import static items.Ability.IGNITE_FIRE;
+
+import actions.Action;
+import actions.IgniteAction;
+import campobjects.ActionCapable;
 import campobjects.Camper;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <h1>Torch class</h1>
@@ -8,7 +15,12 @@ import campobjects.Camper;
  *
  * @author Fauzanda Lathifanka Sunarko
  */
-public class Torch extends Item implements Flammable {
+public class Torch extends Item implements Flammable, ActionCapable {
+
+  /**
+   * Store the list of Action that Torch can do
+   */
+  private List<Action> actions = new ArrayList<>();
 
   /**
    * Torch Constructor
@@ -56,5 +68,19 @@ public class Torch extends Item implements Flammable {
     camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
     return this + " is ignited by " + camper + " and it reduces the coldness by "
         + REDUCE_COLDNESS_VALUE;
+  }
+
+  /**
+   * Getter Method, to list the allowable action that Torch can do
+   *
+   * @return a list of allowable action that Torch can do
+   */
+  @Override
+  public List<Action> allowableActions(Camper camper) {
+
+    if (camper.hasCapability(IGNITE_FIRE)) {
+      this.actions.add(new IgniteAction(this));
+    }
+    return actions;
   }
 }
