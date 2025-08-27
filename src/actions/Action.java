@@ -12,26 +12,13 @@ import items.Item;
  */
 public abstract class Action {
 
-  /**
-   * The item object
-   */
-  private Item item;
 
   /**
-   * Action class Constructor
-   */
-  public Action(Item item) {
-    this.item = item;
-  }
-
-  /**
-   * Getter Method, to get the item object
+   * Abstract Getter Method, to get the item object
    *
    * @return Item
    */
-  public Item getItem() {
-    return this.item;
-  }
+  public abstract Item getItem();
 
   /**
    * Abstract Method for the execution of either pack or unpack action.

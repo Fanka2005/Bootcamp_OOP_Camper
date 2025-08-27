@@ -14,12 +14,17 @@ import items.Item;
 public class UnpackAction extends Action {
 
   /**
+   * The item object
+   */
+  private Item item;
+
+  /**
    * UnpackAction Constructor
    *
    * @param item is the Item object
    */
   public UnpackAction(Item item) {
-    super(item);
+    this.item = item;
   }
 
   /**
@@ -32,12 +37,12 @@ public class UnpackAction extends Action {
   @Override
   public String execute(Camper camper, Campsite campsite) {
 
-    if (camper.remove(super.getItem())) {
-      campsite.add(super.getItem());
-      return camper + " unpacked " + super.getItem().getSimpleName() + " to the camp site";
+    if (camper.remove(this.getItem())) {
+      campsite.add(this.getItem());
+      return camper + " unpacked " + this.getItem().getSimpleName() + " to the camp site";
     }
 
-    return camper + " unpacked " + super.getItem().getSimpleName()
+    return camper + " unpacked " + this.getItem().getSimpleName()
         + " to the camp site because the item is not in the backpack";
   }
 
@@ -49,6 +54,15 @@ public class UnpackAction extends Action {
    */
   @Override
   public String menuDescription(Camper camper) {
-    return camper + " will unpack " + super.getItem().getSimpleName() + " to the campsite";
+    return camper + " will unpack " + this.getItem().getSimpleName() + " to the campsite";
+  }
+
+  /**
+   * Override the abstract method getItem in the Action class
+   *
+   * @return an item
+   */
+  public Item getItem() {
+    return this.item;
   }
 }
