@@ -24,7 +24,11 @@ public abstract class Item {
    */
   private double weight;
 
+  /**
+   * Store the item's ability in a set
+   */
   private Set<Enum<Ability>> statuses;
+
   /**
    * Backpack Constructor
    * <p>
@@ -46,9 +50,27 @@ public abstract class Item {
    */
   public abstract String toString();
 
+  /**
+   * addCapability Method
+   * to addCapability to the item
+   *
+   */
   protected void addCapability(Enum<Ability> capability){ this.statuses.add(capability);}
+
+  /**
+   * removeCapability Method
+   * to removeCapability to the item
+   *
+   */
   protected void removeCapability(Enum<Ability> capability){ this.statuses.remove(capability);}
+
+  /**
+   * hasCapability Method
+   * to check whether a capability exist in the item.
+   *
+   */
   public boolean hasCapability(Enum<Ability> capability){ return this.statuses.contains(capability);}
+
   /**
    * Getter Method, to get the item's brand name
    *
