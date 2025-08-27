@@ -4,6 +4,8 @@ import actions.Action;
 import actions.Menu;
 import items.Bedroll;
 import items.Item;
+import items.OilLantern;
+import items.Torch;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -33,6 +35,8 @@ public class Campsite implements ActionCapable {
   public Campsite() {
     this.camper = new Camper("Fauzanda");
     this.items.add(new Bedroll("Kamui", 7.00));
+    this.items.add(new OilLantern("Lantern1", 1.50));
+    this.items.add(new Torch("Torch1", 1.00));
   }
 
   /**
