@@ -3,6 +3,8 @@ package items;
 import actions.Action;
 import actions.PackAction;
 import actions.UnpackAction;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <h1>Item class</h1>
@@ -22,6 +24,7 @@ public abstract class Item {
    */
   private double weight;
 
+  private Set<Enum<Ability>> statuses;
   /**
    * Backpack Constructor
    * <p>
@@ -31,7 +34,7 @@ public abstract class Item {
    * @param weight is the item's weight
    */
   public Item(String name, double weight) {
-
+    this.statuses = new HashSet<Enum<Ability>>();
     this.name = name;
     this.weight = weight;
   }
@@ -43,6 +46,9 @@ public abstract class Item {
    */
   public abstract String toString();
 
+  protected void addCapability(Enum<Ability> capability){ this.statuses.add(capability);}
+  protected void removeCapability(Enum<Ability> capability){ this.statuses.remove(capability);}
+  public void hasCapability(Enum<Ability> capability){ this.statuses.contains(capability);}
   /**
    * Getter Method, to get the item's brand name
    *
