@@ -2,7 +2,7 @@ package actions;
 
 import campobjects.Camper;
 import campobjects.Campsite;
-import items.Flammable;
+import capabilities.Flammable;
 
 /**
  * <h1>IgniteAction class</h1>

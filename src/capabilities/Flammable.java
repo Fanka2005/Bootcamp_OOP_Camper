@@ -1,4 +1,4 @@
-package items;
+package capabilities;
 
 import campobjects.Camper;
 

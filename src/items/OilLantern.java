@@ -5,6 +5,7 @@ import static items.Ability.IGNITE_FIRE;
 import actions.Action;
 import actions.IgniteAction;
 import campobjects.Camper;
+import capabilities.Flammable;
 import java.util.ArrayList;
 import java.util.List;
 
