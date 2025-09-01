@@ -149,4 +149,11 @@ public class Camper implements ActionCapable {
   public void decreaseColdnessLevel(int value) {
     this.coldnessLevel -= value;
   }
+
+  public boolean isConscious() {
+    if(this.coldnessLevel<30 & this.hydrationLevel>0){
+      return true;
+    }
+    return false;
+  }
 }

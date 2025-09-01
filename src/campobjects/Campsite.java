@@ -90,7 +90,7 @@ public class Campsite implements ActionCapable {
   /**
    * A method to simulate the campsite
    */
-  public void simulate() {
+  public boolean simulate() {
     List<Action> actions = new ArrayList<>();
     actions.addAll(this.allowableActions(this.camper));
     actions.addAll(this.camper.allowableActions(this.camper));
@@ -112,5 +112,6 @@ public class Campsite implements ActionCapable {
     Action action = Menu.showMenu(actions, this.camper);
     System.out.println(action.execute(this.camper, this));
 
+    return this.camper.isConscious();
   }
 }

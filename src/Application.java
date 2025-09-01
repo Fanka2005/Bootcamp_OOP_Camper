@@ -11,10 +11,9 @@ public class Application {
   public static void main(String[] args) {
     Campsite campsite = new Campsite();
 
-    int i = 0;
+    boolean status = true;
     do {
-      campsite.simulate();
-      i += 1;
-    } while (i < 6);
+      status = campsite.simulate();
+    } while (status);
   }
 }
