@@ -1,11 +1,35 @@
 package places;
 
 import actions.Action;
+import actions.ExploreAction;
 import campobjects.Camper;
 import capabilities.Explorable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class MountainSpring implements Explorable {
+
+public class MountainSpring extends Area implements Explorable {
+
+  /**
+   * MountainSpring Constructor
+   * <p>
+   * Initiate all of the MountainSpring class attribute
+   *
+   * @param name   is the place's name
+   */
+  public MountainSpring(String name) {
+    super(name);
+  }
+
+  /**
+   * Getter Method, to get the item type's name
+   *
+   * @return a string of the item type's name
+   */
+  @Override
+  public String getSimpleName() {
+    return "Mountain Spring";
+  }
 
   @Override
   public String exploredBy(Camper camper) {
@@ -13,13 +37,20 @@ public class MountainSpring implements Explorable {
     int REDUCE_HYDRATION_VALUE = 3;
     camper.increaseColdnessLevel(INCREASE_COLDNESS_VALUE);
     camper.decreaseHydrationLevel(REDUCE_HYDRATION_VALUE);
-    return this + " is explore by " + camper + ", it increase the coldness by "
+    return super.getName() + " is explore by " + camper + ", it increase the coldness by "
         + INCREASE_COLDNESS_VALUE + " and reduced hydration by " + REDUCE_HYDRATION_VALUE;
   }
 
+  /**
+   * Getter Method, to list the allowable action that Mountain Spring can do
+   *
+   * @return a list of allowable action that Mountain Spring can do
+   */
   @Override
   public List<Action> allowableActions(Camper camper) {
-    return List.of();
+    List<Action> actions = new ArrayList<>();
+    actions.add(new ExploreAction(this));
+    return actions;
   }
 
 }

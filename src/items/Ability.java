@@ -2,5 +2,6 @@ package items;
 
 
 public enum Ability {
-  IGNITE_FIRE
+  IGNITE_FIRE,
+  RESTING,
 }

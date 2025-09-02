@@ -1,12 +1,37 @@
 package places;
 
+import static items.Ability.IGNITE_FIRE;
+
 import actions.Action;
+import actions.ExploreAction;
+import actions.IgniteAction;
 import campobjects.Camper;
-import capabilities.Explorable;
 import capabilities.Flammable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class River implements Explorable, Flammable {
+public class River extends Area implements Flammable {
+
+  /**
+   * River Constructor
+   * <p>
+   * Initiate all of the River class attribute
+   *
+   * @param name   is the place's name
+   */
+  public River(String name) {
+    super(name);
+  }
+
+  /**
+   * Getter Method, to get the item type's name
+   *
+   * @return a string of the item type's name
+   */
+  @Override
+  public String getSimpleName() {
+    return "River";
+  }
 
   @Override
   public String exploredBy(Camper camper) {
@@ -14,13 +39,24 @@ public class River implements Explorable, Flammable {
     int REDUCE_HYDRATION_VALUE = 4;
     camper.increaseColdnessLevel(INCREASE_COLDNESS_VALUE);
     camper.decreaseHydrationLevel(REDUCE_HYDRATION_VALUE);
-    return this + " is explore by " + camper + ", it increase the coldness by "
+    return super.getName() + " is explore by " + camper + ", it increase the coldness by "
         + INCREASE_COLDNESS_VALUE + " and reduced hydration by " + REDUCE_HYDRATION_VALUE;
   }
 
+  /**
+   * Getter Method, to list the allowable action that River can do
+   *
+   * @return a list of allowable action that River can do
+   */
   @Override
   public List<Action> allowableActions(Camper camper) {
-    return List.of();
+    List<Action> actions = new ArrayList<>();
+    actions.add(new ExploreAction(this));
+    if (camper.hasCapability(IGNITE_FIRE)) {
+      actions.add(new IgniteAction(this));
+    }
+    return actions;
+
   }
 
   @Override
@@ -29,7 +65,7 @@ public class River implements Explorable, Flammable {
     int INCREASE_HYDRATION_VALUE = 5;
     camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
     camper.increaseHydrationLevel(INCREASE_HYDRATION_VALUE);
-    return this + " is ignited by " + camper + ", it reduces the coldness by "
+    return super.getName() + " is ignited by " + camper + ", it reduces the coldness by "
         + REDUCE_COLDNESS_VALUE + " and increase hydration level by " + INCREASE_HYDRATION_VALUE;
   }
 }

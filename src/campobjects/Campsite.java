@@ -6,6 +6,10 @@ import items.Bedroll;
 import items.Item;
 import java.util.List;
 import java.util.ArrayList;
+import places.Area;
+import places.MountainSpring;
+import places.River;
+import places.Trail;
 
 /**
  * <h1>Campsite class</h1>
@@ -26,12 +30,21 @@ public class Campsite implements ActionCapable {
   private List<Item> items = new ArrayList<>();
 
   /**
+   * Store the places near the campsite
+   */
+  private List<Area> places = new ArrayList<>();
+
+  /**
    * Campsite Constructor
    * <p>
    * Initiate all Campsite class attribute
    */
   public Campsite() {
     this.camper = new Camper("Fauzanda");
+    this.places.add(new Trail("Trail"));
+    this.places.add(new MountainSpring("MountBlue"));
+    this.places.add(new River("YarraRiver"));
+
     this.items.add(new Bedroll("Kamui", 7.00));
   }
 
@@ -84,6 +97,10 @@ public class Campsite implements ActionCapable {
     for (Item item : this.items) {
       actions.add(item.getPackAction());
     }
+    for (Area area : this.places) {
+      actions.addAll(area.allowableActions(camper));
+    }
+
     return actions;
   }
 

@@ -33,7 +33,7 @@ public abstract class Item implements ActionCapable {
   private Set<Enum<Ability>> statuses;
 
   /**
-   * Backpack Constructor
+   * Item Constructor
    * <p>
    * Initiate all of the Item class attribute
    *
