@@ -4,5 +4,5 @@ import campobjects.Camper;
 
 public interface Restable {
 
-  public String exploredBy(Camper camper);
+  public String restedBy(Camper camper);
 }

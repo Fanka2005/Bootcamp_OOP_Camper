@@ -3,9 +3,11 @@ package places;
 import actions.Action;
 import campobjects.Camper;
 import capabilities.Explorable;
+import capabilities.Restable;
 import java.util.List;
 
-public class Trail implements Explorable {
+public class Trail implements Explorable, Restable {
+
 
   @Override
   public String exploredBy(Camper camper) {
@@ -20,5 +22,19 @@ public class Trail implements Explorable {
   @Override
   public List<Action> allowableActions(Camper camper) {
     return List.of();
+  }
+
+  /**
+   * @param camper is the camer
+   * @return a string
+   */
+  @Override
+  public String restedBy(Camper camper) {
+    int REDUCE_COLDNESS_VALUE = 4;
+    int INCREASE_HYDRATION_VALUE = 1;
+    camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
+    camper.increaseHydrationLevel(INCREASE_HYDRATION_VALUE);
+    return this + " is rested by " + camper + ", it reduces the coldness by "
+        + REDUCE_COLDNESS_VALUE + " and increase hydration level by " + INCREASE_HYDRATION_VALUE;
   }
 }
