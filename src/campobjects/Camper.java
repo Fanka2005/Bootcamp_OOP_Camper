@@ -150,10 +150,34 @@ public class Camper implements ActionCapable {
     this.coldnessLevel -= value;
   }
 
+  /**
+   * Increase the coldness level of the camper by a certain value
+   *
+   * @param value is an integer value
+   */
+  public void increaseColdnessLevel(int value) {
+    this.coldnessLevel += value;
+  }
+
+  /**
+   * Decrease the hydration level of the camper by a certain value
+   *
+   * @param value is an integer value
+   */
+  public void decreaseHydrationLevel(int value) {
+    this.hydrationLevel -= value;
+  }
+
+  /**
+   * Increase the hydration level of the camper by a certain value
+   *
+   * @param value is an integer value
+   */
+  public void increaseHydrationLevel(int value) {
+    this.hydrationLevel += value;
+  }
+
   public boolean isConscious() {
-    if (this.coldnessLevel < 30 & this.hydrationLevel > 0) {
-      return true;
-    }
-    return false;
+    return this.coldnessLevel < 30 & this.hydrationLevel > 0;
   }
 }
