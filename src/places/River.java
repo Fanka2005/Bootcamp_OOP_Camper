@@ -3,14 +3,16 @@ package places;
 import static items.Ability.IGNITE_FIRE;
 
 import actions.Action;
+import actions.DrinkAction;
 import actions.ExploreAction;
 import actions.IgniteAction;
 import campobjects.Camper;
+import capabilities.Drinkable;
 import capabilities.Flammable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class River extends Area implements Flammable {
+public class River extends Area implements Flammable, Drinkable {
 
   /**
    * River Constructor
@@ -44,6 +46,18 @@ public class River extends Area implements Flammable {
   }
 
   /**
+   * @param camper is the camper object
+   * @return a string
+   */
+  @Override
+  public String drunkBy(Camper camper) {
+    String explored = this.exploredBy(camper);
+    int INCREASE_HYDRATION_VALUE = 2;
+    camper.increaseHydrationLevel(INCREASE_HYDRATION_VALUE);
+    return explored + " and " + super.getName() + " is drunk by " + camper + ", it increase hydration level by " + INCREASE_HYDRATION_VALUE ;
+  }
+
+  /**
    * Getter Method, to list the allowable action that River can do
    *
    * @return a list of allowable action that River can do
@@ -55,17 +69,19 @@ public class River extends Area implements Flammable {
     if (camper.hasCapability(IGNITE_FIRE)) {
       actions.add(new IgniteAction(this));
     }
+    actions.add(new DrinkAction(this));
     return actions;
 
   }
 
   @Override
   public String ignitedBy(Camper camper) {
+    String explored = this.exploredBy(camper);
     int REDUCE_COLDNESS_VALUE = 3;
     int INCREASE_HYDRATION_VALUE = 5;
     camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
     camper.increaseHydrationLevel(INCREASE_HYDRATION_VALUE);
-    return super.getName() + " is ignited by " + camper + ", it reduces the coldness by "
+    return explored + " and " + super.getName() + " is ignited by " + camper + ", it reduces the coldness by "
         + REDUCE_COLDNESS_VALUE + " and increase hydration level by " + INCREASE_HYDRATION_VALUE;
   }
 }

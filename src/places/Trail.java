@@ -63,11 +63,12 @@ public class Trail extends Area implements Restable {
    */
   @Override
   public String restedBy(Camper camper) {
+    String explored = this.exploredBy(camper);
     int REDUCE_COLDNESS_VALUE = 4;
     int INCREASE_HYDRATION_VALUE = 1;
     camper.decreaseColdnessLevel(REDUCE_COLDNESS_VALUE);
     camper.increaseHydrationLevel(INCREASE_HYDRATION_VALUE);
-    return super.getName() + " is rested by " + camper + ", it reduces the coldness by "
+    return explored + " and " + super.getName() + " is rested by " + camper + ", it reduces the coldness by "
         + REDUCE_COLDNESS_VALUE + " and increase hydration level by " + INCREASE_HYDRATION_VALUE;
   }
 }
