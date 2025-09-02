@@ -45,8 +45,8 @@ public class Camper implements ActionCapable {
    */
   public Camper(String camperName) {
     this.camperName = camperName;
-    this.backpack = new Backpack(new Bottle("items.Bottle", 1.00, 1.0),
-        new FlintAndSteel("Flint and Steel", 0.50), new Bedroll("items.Bedroll", 7.00), 10.0);
+    this.backpack = new Backpack(new Bottle("Bottle", 1.00, 1.0),
+        new FlintAndSteel("Flint and Steel", 0.50), new Bedroll("Bedroll", 7.00), 10.0);
     this.hydrationLevel = 20;
     this.coldnessLevel = 20;
   }

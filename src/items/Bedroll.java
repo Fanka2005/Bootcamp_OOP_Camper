@@ -18,6 +18,7 @@ public class Bedroll extends Item {
    */
   public Bedroll(String name, double weight) {
     super(name, weight);
+    this.addCapability(Ability.RESTING);
   }
 
   /**

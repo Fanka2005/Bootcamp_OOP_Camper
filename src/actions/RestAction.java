@@ -40,7 +40,7 @@ public class RestAction extends Action {
    */
   @Override
   public String menuDescription(Camper camper) {
-    return camper + " will explore " + restable.getClass().getSimpleName();
+    return camper + " will rest in " + restable.getClass().getSimpleName();
   }
 
 }

@@ -117,7 +117,7 @@ public class Campsite implements ActionCapable {
     System.out.println(this.camper.toString());
     System.out.println(
         "Here are the Items that " + this.camper.getCamperName()
-            + " has in the campobjects.Backpack ("
+            + " has in the Backpack ("
             + this.camper.getWeight() + ") :");
 
     this.camper.checkAllItems();
