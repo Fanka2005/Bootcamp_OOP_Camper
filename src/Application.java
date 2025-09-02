@@ -15,5 +15,6 @@ public class Application {
     do {
       status = campsite.simulate();
     } while (status);
+    System.out.println("Game Ends as Camper is not conscious");
   }
 }
