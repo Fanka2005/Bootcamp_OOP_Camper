@@ -49,10 +49,9 @@ public class MountainSpring extends Area implements Explorable, Drinkable {
    */
   @Override
   public String drunkBy(Camper camper) {
-    String explored = this.exploredBy(camper);
     int INCREASE_HYDRATION_VALUE = 3;
     camper.increaseHydrationLevel(INCREASE_HYDRATION_VALUE);
-    return explored + " and " + super.getName() + " is drunk by " + camper + ", it increase hydration level by " + INCREASE_HYDRATION_VALUE ;
+    return super.getName() + " is drunk by " + camper + ", it increase hydration level by " + INCREASE_HYDRATION_VALUE ;
   }
 
   /**
