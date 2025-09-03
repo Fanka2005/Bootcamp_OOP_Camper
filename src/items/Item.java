@@ -117,6 +117,11 @@ public abstract class Item implements ActionCapable {
     return new UnpackAction(this);
   }
 
+  /**
+   * Getter Method, to list the allowable action that the items's can do
+   *
+   * @return a list of allowable action that the items's can do
+   */
   @Override
   public List<Action> allowableActions(Camper camper) {
     List<Action> actions = null;

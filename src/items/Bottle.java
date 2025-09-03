@@ -56,14 +56,28 @@ public class Bottle extends Item implements Drinkable {
         + super.getWeight() + " - to drink with " + this.capacity + " litre left.";
   }
 
+  /**
+   * to decrease the bottle capacity
+   *
+   * @param capacity, is the capacity of the bottle
+   */
   public void decreaseCapacity(double capacity){
     this.capacity -= capacity;
   }
 
+  /**
+   * to increase the bottle capacity
+   *
+   * @param capacity, is the capacity of the bottle
+   */
   public void increaseCapacity(double capacity){
     this.capacity += capacity;
   }
 
+  /**
+   * getter method, to get the bottle capacity
+   *
+   */
   public double getCapacity() {
     return this.capacity;
   }
@@ -85,6 +99,11 @@ public class Bottle extends Item implements Drinkable {
     return super.getName() + " cannot drink from the bottle, because this bottle is empty";
   }
 
+  /**
+   * Getter Method, to list the allowable action that the bottle can do
+   *
+   * @return a list of allowable action that the bottle can do
+   */
   @Override
   public List<Action> allowableActions(Camper camper) {
     List<Action> actions = new ArrayList<Action>();

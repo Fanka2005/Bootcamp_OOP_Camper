@@ -12,6 +12,14 @@ import java.util.*;
 
 public class Menu {
 
+  /**
+   * I/O of the application which shows the status and all of the allowable actions,
+   * it will then input the chosen actions
+   *
+   * @param camper   is the Camper object
+   * @param actions is list of allowable actions from all of the objects
+   * @return Action, an action
+   */
   public static Action showMenu(List<Action> actions, Camper camper) {
     Scanner scanner = new Scanner(System.in);
     Character startChar = 'a';

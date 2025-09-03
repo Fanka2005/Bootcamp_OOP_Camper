@@ -9,6 +9,12 @@ import capabilities.Restable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <h1>Trail class</h1>
+ * The class Trail is used to implement the parent class abstract method/fields.
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class Trail extends Area implements Restable {
 
   /**
@@ -23,15 +29,23 @@ public class Trail extends Area implements Restable {
   }
 
   /**
-   * Getter Method, to get the item type's name
+   * Getter Method, to get the Trail name
    *
-   * @return a string of the item type's name
+   * @return a string of the Trail name
    */
   @Override
   public String getSimpleName() {
     return "Trail";
   }
 
+  /**
+   * The exploreBy methods, which will provide the implementation
+   * for the Explore Action :    INCREASE CAMPER COLDNESS LEVEL by 3 and
+   * REDUCE CAMPER HYDRATION LEVEL by 3;
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
+   */
   @Override
   public String exploredBy(Camper camper) {
     int INCREASE_COLDNESS_VALUE = 3;
@@ -58,8 +72,12 @@ public class Trail extends Area implements Restable {
   }
 
   /**
-   * @param camper is the camer
-   * @return a string
+   * The restedBy methods, which will provide the implementation
+   * for the Rest Action : REDUCE CAMPER COLDNESS LEVEL by 4 and
+   *  INCREASE CAMPER HYDRATION LEVEL by 1;
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
    */
   @Override
   public String restedBy(Camper camper) {

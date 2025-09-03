@@ -177,6 +177,11 @@ public class Camper implements ActionCapable {
     this.hydrationLevel += value;
   }
 
+  /**
+   * This method is used to check camper's consciousness
+   *
+   * @return boolean, true = camper is conscious, false = camper is not conscious
+   */
   public boolean isConscious() {
     return this.coldnessLevel < 30 & this.hydrationLevel > 0;
   }

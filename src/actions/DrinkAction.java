@@ -4,6 +4,12 @@ import campobjects.Camper;
 import campobjects.Campsite;
 import capabilities.Drinkable;
 
+/**
+ * <h1>DrinkAction class</h1>
+ * This class is used extend the abstract Action class for Drinking action
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class DrinkAction extends Action {
 
   /**

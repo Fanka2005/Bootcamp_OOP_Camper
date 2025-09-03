@@ -12,6 +12,12 @@ import capabilities.Flammable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <h1>River class</h1>
+ * The class River is used to implement the parent class abstract method/fields.
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class River extends Area implements Flammable, Drinkable {
 
   /**
@@ -26,15 +32,23 @@ public class River extends Area implements Flammable, Drinkable {
   }
 
   /**
-   * Getter Method, to get the item type's name
+   * Getter Method, to get the River name
    *
-   * @return a string of the item type's name
+   * @return a string of the River name
    */
   @Override
   public String getSimpleName() {
     return "River";
   }
 
+  /**
+   * The exploreBy methods, which will provide the implementation
+   * for the Explore Action :    INCREASE CAMPER COLDNESS LEVEL by 2 and
+   * REDUCE CAMPER HYDRATION LEVEL by 4;
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
+   */
   @Override
   public String exploredBy(Camper camper) {
     int INCREASE_COLDNESS_VALUE = 2;
@@ -46,8 +60,11 @@ public class River extends Area implements Flammable, Drinkable {
   }
 
   /**
-   * @param camper is the camper object
-   * @return a string
+   * The drunkBy methods, which will provide the implementation
+   * for the Drink Action : INCREASE CAMPER HYDRATION LEVEL by 2
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
    */
   @Override
   public String drunkBy(Camper camper) {
@@ -73,6 +90,14 @@ public class River extends Area implements Flammable, Drinkable {
 
   }
 
+  /**
+   * The ignitedBy methods, which will provide the implementation
+   * for the Ignite Action: REDUCE CAMPER COLDNESS LEVEL by 3 and
+   *  INCREASE CAMPER HYDRATION LEVEL by 5;
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
+   */
   @Override
   public String ignitedBy(Camper camper) {
     String explored = this.exploredBy(camper);

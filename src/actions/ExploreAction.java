@@ -4,6 +4,12 @@ import campobjects.Camper;
 import campobjects.Campsite;
 import capabilities.Explorable;
 
+/**
+ * <h1>ExploreAction class</h1>
+ * This class is used extend the abstract Action class for exploring an area object
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class ExploreAction extends Action {
 
   /**

@@ -9,7 +9,12 @@ import capabilities.Explorable;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * <h1>MountainSpring class</h1>
+ * The class MountainSpring is used to implement the parent class abstract method/fields.
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class MountainSpring extends Area implements Explorable, Drinkable {
 
   /**
@@ -24,15 +29,23 @@ public class MountainSpring extends Area implements Explorable, Drinkable {
   }
 
   /**
-   * Getter Method, to get the item type's name
+   * Getter Method, to get the Mountain Spring name
    *
-   * @return a string of the item type's name
+   * @return a string of the Mountain Spring name
    */
   @Override
   public String getSimpleName() {
     return "Mountain Spring";
   }
 
+  /**
+   * The exploreBy methods, which will provide the implementation
+   * for the Explore Action :    INCREASE CAMPER COLDNESS LEVEL by 2 and
+   * REDUCE CAMPER HYDRATION LEVEL by 3;
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
+   */
   @Override
   public String exploredBy(Camper camper) {
     int INCREASE_COLDNESS_VALUE = 2;
@@ -44,8 +57,11 @@ public class MountainSpring extends Area implements Explorable, Drinkable {
   }
 
   /**
-   * @param camper is the camper object
-   * @return a string
+   * The drunkBy methods, which will provide the implementation
+   * for the Drink Action : INCREASE CAMPER HYDRATION LEVEL by 3
+   *
+   * @param camper   is the Camper object
+   * @return a string that inform what happened.
    */
   @Override
   public String drunkBy(Camper camper) {

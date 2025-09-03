@@ -4,6 +4,12 @@ import campobjects.Camper;
 import campobjects.Campsite;
 import capabilities.Restable;
 
+/**
+ * <h1>RestAction class</h1>
+ * This class is used extend the abstract Action class for Resting action
+ *
+ * @author Fauzanda Lathifanka Sunarko
+ */
 public class RestAction extends Action {
 
   /**
@@ -12,9 +18,9 @@ public class RestAction extends Action {
   private Restable restable;
 
   /**
-   * ExploreAction Constructor
+   * RestAction Constructor
    *
-   * @param restable is an explorable object
+   * @param restable is a rest-able object
    */
   public RestAction(Restable restable) {
     this.restable = restable;
