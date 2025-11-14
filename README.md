@@ -15,7 +15,9 @@ Run the Application.py
 fankasunarko@gmail.com
 
 ## Authors and acknowledgment
-FIT2099 Monash University Clayton Semester 2 2025 Team.
+Many thanks to FIT2099 Monash University Clayton Semester 2 2025 Team for creating the project specification and engine code.
+Authors : Fauzanda Lathifanka Sunarko
+Email : fankasunarko@gmail.com
 
 ## Project status
 Complete.
